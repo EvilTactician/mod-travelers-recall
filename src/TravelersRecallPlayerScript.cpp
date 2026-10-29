@@ -13,6 +13,10 @@
 #include <unordered_set>
 #include <vector>
 
+#ifdef MOD_PLAYERBOTS
+#include "PlayerbotMgr.h"
+#endif
+
 namespace
 {
     struct RecallLocation
@@ -262,7 +266,7 @@ TravelersRecallPlayerScript::TravelersRecallPlayerScript()
 void TravelersRecallPlayerScript::OnPlayerUpdateArea(Player *player, uint32 oldArea, uint32 newArea)
 {
     #ifdef MOD_PLAYERBOTS
-    if (player->GetSession()->IsBot())
+    if (PlayerbotsMgr::instance().GetPlayerbotAI(player))
     {
         return;
     }
