@@ -8,21 +8,19 @@ Progressive fast-travel system for AzerothCore.
 
 ---
 
-## October 27, 2026 - Bugfix 1.1.1 Released
+## November 9, 2026 - Version 1.2.0 Released
 
-A minor (but with major drawback) bugfix.
+Optional cast time before teleporting.
+> When enabled in the configuration file, players cast "Translocate" for 3 seconds before teleporting, with the cast bar and visual of the Blood Elf translocation orbs.
+> Moving, jumping or pressing Escape cancels the cast without teleporting and without starting the cooldown.
 
-Fixed bots not teleporting when you're the party leader.
-> Now when enabled on the configuration file AND you're on the Playerbots branch of AzerothCore
-> bots will teleport with you.
+Separate cooldown for Teleport to a Friend.
+> `TravelersRecall.FriendCooldown` overrides the cooldown of Teleport to a Friend without editing the database.
+
+Fixed compile errors on the Playerbots branch of AzerothCore ([#34](https://github.com/ThiagoSBarreto/mod-travelers-recall/issues/34)).
 
 > [!NOTE]
-> If you're not using the Playerbots branch, you'll just teleport.
-
-Fixed places discovery, thanks to [EvilTactician](https://github.com/EvilTactician)
-> Was added a sub-zone detection that when wrong, now it's fixed.
-
-As always, thank you so much for using the module! If you encounter any issues, please open an issue.
+> Both new options are off by default, so existing servers behave as before. Copy the new settings from `mod-travelers-recall.conf.dist` into your configuration to use them.
 
 ---
 
@@ -44,7 +42,8 @@ Players unlock travel locations by discovering cities and important places acros
 * Custom unlockable locations
 * Level requirement support
 * Initial unlocked teleports
-* Teleport to a Friend
+* Teleport to a Friend, with its own configurable cooldown
+* Optional 3-second cast before teleporting, cancellable without starting the cooldown
 * GM Commands
 * Optional party bot teleport support (enable `TravelersRecall.TeleportPartyBots` in the configuration)
 * Optional Headless-client teleport support (enable `TravelersRecall.TeleportHeadlessClient` in the configuration)
@@ -53,7 +52,7 @@ Players unlock travel locations by discovering cities and important places acros
 
 ## Required Addon
 
-This module requires the separate client addon: [**TravelersRecall — Client Addon**](https://github.com/NecroHome/TravelersRecall).
+This module requires the separate client addon: [**TravelersRecall — Client Addon**](https://github.com/EvilTactician/TravelersRecall).
 
 The addon provides the user interface used to browse and select unlocked teleport locations.
 
@@ -77,7 +76,7 @@ Example:
 
 ```bash
 cd /path/to/azerothcore/modules
-git clone https://github.com/NecroHome/mod-travelers-recall.git
+git clone https://github.com/EvilTactician/mod-travelers-recall.git
 ```
 
 ### 1.2. Rebuild AzerothCore
@@ -137,7 +136,7 @@ azerothcore/
 
 ### 1.5. Install the Client Addon
 
-Download the client addon from: [**TravelersRecall — Client Addon**](https://github.com/NecroHome/TravelersRecall).
+Download the client addon from: [**TravelersRecall — Client Addon**](https://github.com/EvilTactician/TravelersRecall).
 
 Install it into your World of Warcraft client directory.
 
@@ -351,6 +350,23 @@ The faction setting applies to every character of that faction, and the race set
 
 ---
 
+### 2.9. Cast Time Before Teleporting
+
+Set `TravelersRecall.CastTime.Enable` to `1` to make players cast before they teleport:
+
+```ini
+TravelersRecall.CastTime.Enable = 1
+```
+
+* `0` (default): Players teleport instantly.
+* `1`: Players cast "Translocate" for 3 seconds, with the cast bar and visual of the Blood Elf translocation orbs, then teleport.
+
+Moving, jumping or pressing Escape cancels the cast. A cancelled cast does not teleport and does not start the cooldown. Mounted players are dismounted when the cast starts. Party bots teleport with the player when the cast finishes.
+
+> The cast uses the "Translocate" spell (26566) from the Duskwither Spire orbs in Eversong Woods. The SQL update binds the module's spell script to it; the orbs themselves keep working as before.
+
+---
+
 ## 3. Teleport to a Friend
 
 The `Teleport to a Friend` option teleports the player to the currently selected character.
@@ -365,7 +381,13 @@ The teleport is allowed only when all of the following conditions are met for bo
 * Neither player is on a transport, in flight, dead, in a battleground, dungeon, or raid.
 * Stealth and combat restrictions follow the configuration.
 
-> The default cooldown is **24 hours (86400 seconds)** and is configured in the database.
+The cooldown is **24 hours (86400 seconds)** by default and is configured in the database. To change it without editing the database, set `TravelersRecall.FriendCooldown` in the configuration file:
+
+* `-1` (default): Uses the cooldown from the database.
+* `0`: No cooldown.
+* Greater than `0`: Cooldown in seconds, for example `3600` for one hour.
+
+> This setting only affects Teleport to a Friend. Other locations keep their own cooldowns.
 
 ## 4. GM Commands
 
@@ -452,6 +474,8 @@ LesmaSamuray
 
 ## 9. Credits
 
+* Fork maintained by [EvilTactician](https://github.com/EvilTactician), based on [ThiagoSBarreto/mod-travelers-recall](https://github.com/ThiagoSBarreto/mod-travelers-recall)
+
 ---
 
 ## 10. Update
@@ -472,6 +496,14 @@ To update the module, follow these instructions:
 ---
 
 ## 11. Change Log
+
+### 09/11/2026 - Version 1.2.0
+
+* **New feature:** Cast time before teleporting
+    * If enabled in the configuration file (`TravelersRecall.CastTime.Enable`), players cast "Translocate" for 3 seconds before teleporting (see section 2.9)
+    * Moving, jumping or pressing Escape cancels the cast without starting the cooldown
+* **New feature:** Separate cooldown for Teleport to a Friend (`TravelersRecall.FriendCooldown`, see section 3)
+* Fixed compile errors on the Playerbots branch of AzerothCore ([#34](https://github.com/ThiagoSBarreto/mod-travelers-recall/issues/34))
 
 ### 27/10/2026 - Version 1.1.1
 
