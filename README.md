@@ -30,6 +30,21 @@ Players unlock travel locations by discovering cities and important places acros
 
 ---
 
+## Images
+
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/08c68f98-80b7-4360-9f38-a936e4f60326" />
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/819b89fd-5ab5-4777-9ce1-fa57c4cb5042" />
+<details>
+<summary>View more screenshots</summary>
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/855c04bd-0f93-4b1a-81f1-de1d8c67e403" />
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/86e348e4-43a4-46f8-a61b-bd9d9b786f15" />
+
+<img width="365" height="124" alt="image" src="https://github.com/user-attachments/assets/ce9a2e54-49b0-42f1-925c-bc1e58f583ed" />
+<img width="524" height="149" alt="image" src="https://github.com/user-attachments/assets/091b803a-129f-46bc-a51a-764ba5aceac1" />
+</details>
+
+---
+
 ## Features
 
 * Unlock teleport locations by discovering cities and important places
@@ -443,22 +458,7 @@ Removes all Traveler's Recall locations from the selected player or yourself.
 
 ---
 
-## 6. Images
-
-<img width="49%" alt="image" src="https://github.com/user-attachments/assets/08c68f98-80b7-4360-9f38-a936e4f60326" />
-<img width="49%" alt="image" src="https://github.com/user-attachments/assets/819b89fd-5ab5-4777-9ce1-fa57c4cb5042" />
-<details>
-<summary>View more screenshots</summary>
-<img width="49%" alt="image" src="https://github.com/user-attachments/assets/855c04bd-0f93-4b1a-81f1-de1d8c67e403" />
-<img width="49%" alt="image" src="https://github.com/user-attachments/assets/86e348e4-43a4-46f8-a61b-bd9d9b786f15" />
-
-<img width="365" height="124" alt="image" src="https://github.com/user-attachments/assets/ce9a2e54-49b0-42f1-925c-bc1e58f583ed" />
-<img width="524" height="149" alt="image" src="https://github.com/user-attachments/assets/091b803a-129f-46bc-a51a-764ba5aceac1" />
-</details>
-
----
-
-## 7. FAQ
+## 6. FAQ
 
 Q: Can I contact you?
 
@@ -470,20 +470,20 @@ A: That's not a question, but feel free to open a feature request!
 
 ---
 
-## 8. Author
+## 7. Author
 
 **ThiagoSBarreto**
 LesmaSamuray
 
 ---
 
-## 9. Credits
+## 8. Credits
 
 * Fork maintained by [EvilTactician](https://github.com/EvilTactician), based on [ThiagoSBarreto/mod-travelers-recall](https://github.com/ThiagoSBarreto/mod-travelers-recall)
 
 ---
 
-## 10. Update
+## 9. Update
 
 To update the module, follow these instructions:
 
@@ -500,7 +500,7 @@ To update the module, follow these instructions:
 
 ---
 
-## 11. Change Log
+## 10. Change Log
 
 ### 09/11/2026 - Version 1.2.0
 
