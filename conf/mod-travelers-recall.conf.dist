@@ -37,6 +37,18 @@ TravelersRecall.CanTeleport.InBattleground = 0
 TravelersRecall.CanTeleport.InDungeonOrRaid = 0
 
 #
+#   Cast Time
+#       Description: Cast "Translocate" for 3 seconds before teleporting, like the
+#                    Blood Elf translocation orbs. Moving, jumping or pressing Escape
+#                    cancels the cast; a cancelled cast does not teleport and does not
+#                    start the cooldown.
+#       Default:        0 (disabled, teleport instantly)
+#                       1 (enabled)
+#
+
+TravelersRecall.CastTime.Enable = 0
+
+#
 #   Cooldown Settings
 #       Description: Configure the cooldown settings for Traveler's Recall.
 #       Default:        1 (use default cooldown), 3600 seconds (1 hour)
