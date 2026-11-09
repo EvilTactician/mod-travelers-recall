@@ -2,8 +2,6 @@
 
 Progressive fast-travel system for AzerothCore.
 
-[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-support-ff69b4?logo=github)](https://github.com/sponsors/ThiagoSBarreto)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-FFDD00?logo=buymeacoffee&logoColor=black&style=flat)](https://buymeacoffee.com/thiagosbarreto)
 ![World of Warcraft Client](https://img.shields.io/badge/World%20of%20Warcraft%20Client-3.3.5a-blue)
 
 ---
@@ -447,9 +445,16 @@ Removes all Traveler's Recall locations from the selected player or yourself.
 
 ## 6. Images
 
-<img width="382" height="646" alt="image" src="https://github.com/user-attachments/assets/606e409e-e99a-411f-814f-87e14b324be0" />
-<img width="388" height="647" alt="image" src="https://github.com/user-attachments/assets/07f8ad7c-f936-43d4-a463-8b1322fc0deb" />
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/08c68f98-80b7-4360-9f38-a936e4f60326" />
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/819b89fd-5ab5-4777-9ce1-fa57c4cb5042" />
+<details>
+<summary>View more screenshots</summary>
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/855c04bd-0f93-4b1a-81f1-de1d8c67e403" />
+<img width="49%" alt="image" src="https://github.com/user-attachments/assets/86e348e4-43a4-46f8-a61b-bd9d9b786f15" />
+
 <img width="365" height="124" alt="image" src="https://github.com/user-attachments/assets/ce9a2e54-49b0-42f1-925c-bc1e58f583ed" />
+<img width="524" height="149" alt="image" src="https://github.com/user-attachments/assets/091b803a-129f-46bc-a51a-764ba5aceac1" />
+</details>
 
 ---
 
