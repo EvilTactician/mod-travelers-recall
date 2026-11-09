@@ -1,0 +1,182 @@
+[worldserver]
+
+###################################################################################################
+# MOD TRAVELER'S RECALL
+#
+
+#
+#   Enable Traveler's Recall
+#       Description: Enable or disable the Traveler's Recall module.
+#       Default:        1 (enabled)
+#                       0 (disabled)
+#
+
+TravelersRecall.Enable = 1
+
+#
+#   Enable Welcome Message
+#       Description: Enable the welcome message shown on player login: "This server uses the Traveler's Recall module."
+#       Default:        1 (enabled)
+#                       0 (disabled)
+#
+
+TravelersRecall.WelcomeMessage = 1
+
+#
+#   Teleportation Restrictions
+#       Description: Configure the conditions under which players may use Traveler's Recall.
+#       Default:        0 (not allowed)
+#                       1 (allowed)
+#
+
+TravelersRecall.CanTeleport.InFlight = 0
+TravelersRecall.CanTeleport.WhileStealthed = 0
+TravelersRecall.CanTeleport.InCombat = 0
+TravelersRecall.CanTeleport.WhileDead = 0
+TravelersRecall.CanTeleport.InBattleground = 0
+TravelersRecall.CanTeleport.InDungeonOrRaid = 0
+
+#
+#   Cast Time
+#       Description: Cast "Translocate" for 3 seconds before teleporting, like the
+#                    Blood Elf translocation orbs. Moving, jumping or pressing Escape
+#                    cancels the cast; a cancelled cast does not teleport and does not
+#                    start the cooldown.
+#       Default:        0 (disabled, teleport instantly)
+#                       1 (enabled)
+#
+
+TravelersRecall.CastTime.Enable = 0
+
+#
+#   Cooldown Settings
+#       Description: Configure the cooldown settings for Traveler's Recall.
+#       Default:        1 (use default cooldown), 3600 seconds (1 hour)
+#
+#       Note: You can specify a custom cooldown duration in seconds for
+#       each location in the database.
+#
+
+TravelersRecall.UseDefaultCooldown = 1
+TravelersRecall.DefaultCooldown = 3600
+
+#
+#   Friend Cooldown
+#       Description: Cooldown in seconds for Teleport to a Friend. The default cooldown above is
+#                    only used when a location has no cooldown in the database, and the Teleport
+#                    to a Friend row in the database has its own cooldown (24 hours). Set this to
+#                    override that value for Teleport to a Friend only.
+#       Default:        -1 (use the cooldown of the database row)
+#                       0  (no cooldown)
+#                       Any other value is the cooldown in seconds, e.g. 3600 (1 hour)
+#
+
+TravelersRecall.FriendCooldown = -1
+
+#
+#   Level Restriction Settings
+#       Description: Configure the level requirement needed to unlock an area.
+#       Default:        0 (any player at any level can unlock all locations)
+#                       1 (players must be at least the required level to unlock the location)
+#
+#       Note: The required level is configured in the database table
+#       "acore_world.custom_travelers_recall_locations" by changing the "required_level" column.
+#
+
+TravelersRecall.UseRequiredLevel = 0
+
+#
+#   Teleport to a Friend
+#       Description: Teleports the player to a friendly target when all conditions are met.
+#       Default:        1 (enabled)
+#                       0 (disabled)
+#
+#       Note: The conditions are checked for both players.
+#
+
+TravelersRecall.TeleportToFriendEnabled = 1
+
+#
+#   Teleport Party Bots
+#       Description: Teleports Playerbots party members when the player uses Traveler's Recall.
+#       Default:        1 (enabled)
+#                       0 (disabled)
+#
+#       Player must be the party leader to teleport the bots
+#
+
+TravelersRecall.TeleportPartyBots = 1
+
+#
+#   Teleport Headless Clients
+#       Description: Teleports Headless clients in the player's party when using Traveler's Recall.
+#       Default:        0 (disabled)
+#                       1 (enabled)
+#
+#       Note: Player must be the party leader to teleport Headless clients.
+#
+
+TravelersRecall.TeleportHeadlessClient = 0
+
+#
+#   Initial Teleport Locations
+#       Description: Configure whether players start with one or more locations unlocked.
+#       Default:        0 (players do not start with any unlocked locations)
+#                       1 (players start with the configured locations for their faction and race)
+#
+
+TravelersRecall.InitialTeleportLocationsEnabled = 0
+
+#
+#   Start With All Locations Unlocked
+#       Description: Configure whether players start with all neutral locations and all locations for their faction unlocked.
+#       Default:        0 (disabled)
+#                       1 (enabled)
+#
+
+TravelersRecall.StartWithAllLocationsUnlocked = 0
+
+#
+#   Initial Locations
+#       Description: Configure the locations that Alliance and Horde players start unlocked with.
+#                    Multiple locations can be used; separate them with commas, for example: 123,456,789
+#       Defaults:
+#        - Alliance:    1519 (Stormwind)
+#        - Horde:       1637 (Orgrimmar)
+#
+
+TravelersRecall.InitialAllianceTeleports = 1519
+TravelersRecall.InitialHordeTeleports = 1637
+
+#
+#   Initial Race Locations
+#       Description: Configure the locations that players of each race start unlocked with.
+#       Default Alliance races:
+#        - Human:       87 (Goldshire)
+#        - Dwarf:       1537 (Ironforge)
+#        - NightElf:    1657 (Darnassus)
+#        - Gnome:       1537 (Ironforge)
+#        - Draenei:     3557 (The Exodar)
+#
+#       Default Horde races:
+#        - Orc:         362 (Razor Hill)
+#        - Undead:      1497 (Undercity)
+#        - Tauren:      1638 (Thunder Bluff)
+#        - Troll:       380 (Crossroads)
+#        - BloodElf:    3487 (Silvermoon)
+#
+
+TravelersRecall.InitialHumanTeleports = 87
+TravelersRecall.InitialDwarfTeleports = 1537
+TravelersRecall.InitialNightElfTeleports = 1657
+TravelersRecall.InitialGnomeTeleports = 1537
+TravelersRecall.InitialDraeneiTeleports = 3557
+
+TravelersRecall.InitialOrcTeleports = 362
+TravelersRecall.InitialUndeadTeleports = 1497
+TravelersRecall.InitialTaurenTeleports = 1638
+TravelersRecall.InitialTrollTeleports = 380
+TravelersRecall.InitialBloodElfTeleports = 3487
+
+#
+###################################################################################################
