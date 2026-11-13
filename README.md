@@ -6,19 +6,15 @@ Progressive fast-travel system for AzerothCore.
 
 ---
 
-## November 9, 2026 - Version 1.2.0 Released
+## November 13, 2026 - Version 1.3.0 Released
 
-Optional cast time before teleporting.
-> When enabled in the configuration file, players cast "Translocate" for 3 seconds before teleporting, with the cast bar and visual of the Blood Elf translocation orbs.
-> Moving, jumping or pressing Escape cancels the cast without teleporting and without starting the cooldown.
+Teleport to a Friend now follows the same teleport restrictions as the other locations.
+> With `TravelersRecall.CanTeleport.InDungeonOrRaid = 1`, players can teleport to a group member from or into a dungeon or raid. Entering the dungeon or raid still requires the player to meet its normal entry requirements (level, attunement, lockouts, raid group).
 
-Separate cooldown for Teleport to a Friend.
-> `TravelersRecall.FriendCooldown` overrides the cooldown of Teleport to a Friend without editing the database.
-
-Fixed compile errors on the Playerbots branch of AzerothCore ([#34](https://github.com/ThiagoSBarreto/mod-travelers-recall/issues/34)).
+New locations: Tarren Mill, Sun Rock Retreat and Stonetalon Peak.
 
 > [!NOTE]
-> Both new options are off by default, so existing servers behave as before. Copy the new settings from `mod-travelers-recall.conf.dist` into your configuration to use them.
+> Apply the database updates and rebuild AzerothCore after updating. Update the [client addon](https://github.com/EvilTactician/TravelersRecall) to version 1.1.2 so the new locations are grouped under their region.
 
 ---
 
@@ -390,9 +386,10 @@ The teleport is allowed only when all of the following conditions are met for bo
 
 * The selected player is online.
 * The selected player is in the same group.
-* Both players are in the overworld.
-* Neither player is on a transport, in flight, dead, in a battleground, dungeon, or raid.
-* Stealth and combat restrictions follow the configuration.
+* Neither player is on a transport.
+* The selected player is not in flight, dead or in a battleground.
+* Flight, stealth, combat, death, battleground, dungeon and raid restrictions follow the same `TravelersRecall.CanTeleport.*` settings as the other locations. The dungeon and raid setting applies to both players, so teleporting into a group member's dungeon or raid requires `TravelersRecall.CanTeleport.InDungeonOrRaid = 1`.
+* The player meets the normal entry requirements of the selected player's map, such as level, attunement, lockouts and raid group.
 
 The cooldown is **24 hours (86400 seconds)** by default and is configured in the database. To change it without editing the database, set `TravelersRecall.FriendCooldown` in the configuration file:
 
@@ -501,6 +498,12 @@ To update the module, follow these instructions:
 ---
 
 ## 10. Change Log
+
+### 13/11/2026 - Version 1.3.0
+
+* Teleport to a Friend follows the `TravelersRecall.CanTeleport.*` settings like the other locations, instead of always blocking flight, death, battlegrounds, dungeons and raids (see section 3)
+* Teleport to a Friend checks the normal entry requirements of the target's map, and no longer starts the cooldown when the teleport fails
+* Added Tarren Mill, Sun Rock Retreat and Stonetalon Peak
 
 ### 09/11/2026 - Version 1.2.0
 

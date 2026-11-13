@@ -138,14 +138,20 @@ bool TravelersRecallCommandScript::HandleTeleportToFriend(Player *player, ChatHa
         return true;
     }
 
-    player->TeleportTo(
+    // No TELE_TO_GM_MODE: the core checks whether the player may enter the target's map
+    // (level, attunement, lockouts, raid group), the same as for the other teleports.
+    if (!player->TeleportTo(
         selectedPlayer->GetMapId(),
         selectedPlayer->GetPositionX(),
         selectedPlayer->GetPositionY(),
         selectedPlayer->GetPositionZ() + 0.25f,
         player->GetOrientation(),
-        TELE_TO_GM_MODE,
-        selectedPlayer);
+        0,
+        selectedPlayer))
+    {
+        handler->SendSysMessage("Traveler's Recall: teleportation failed.");
+        return true;
+    }
 
     if (cooldown > 0)
     {
